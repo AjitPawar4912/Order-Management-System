@@ -1,0 +1,27 @@
+
+<div class="row productdetails" *ngIf="productData">
+  <div class="">
+    <img  class="productdetailsimage" src="{{productData.image}}" alt="ERROR IMAGE">
+
+  </div>
+  <div class="col-6">
+    <div class="details">
+      <h1 class="para">{{productData.name}}</h1>
+      <p class="brandname">{{productData.brandname}}</p>
+      <p class=" category para">{{productData.category}}</p>
+      <p class="price">Price:{{productData.price}}</p>
+      <p class="para">{{productData.description}}</p>
+      <button *ngIf="!removeCart" class="formbutton" (click)="addToCart()">Add to Cart</button>
+      <button *ngIf="removeCart" class="formbutton" (click)="removeToCart(productData.id)">Remove</button>
+      <div class="quantitygroup">
+        <button class="minusbutton" (click)="handlequantity('min')">-</button>
+        <input class="input" type="text" value="{{productQuantity}}">
+        <button class="plusbutton" (click)="handlequantity('plus')">+</button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

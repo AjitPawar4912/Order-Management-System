@@ -1,0 +1,13 @@
+
+<div class="card" *ngFor="let item of searchResult">
+  <a routerLink="/details/{{item.id}}">
+    <img src={{item.image}} alt="ERROR IMAGE" style="width:100%">
+  </a>
+
+  <h1 class="para"><a routerLink="/details/{{item.id}}">{{item.name}}</a></h1>
+  <p class="brandname para">{{item.brandname}}</p>
+  <p class="category para">{{item.category}}</p>
+  <p class="price para">Price:{{item.price}}</p>
+  <p class="para">{{item.description}}</p>
+
+</div>

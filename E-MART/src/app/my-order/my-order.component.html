@@ -1,0 +1,90 @@
+
+<!-- <div class="myorders">
+  <h1>My Orders</h1>
+  <div class="row ">
+    <div class="col-sm-8 image">
+      <span>Order</span>
+    </div>
+    <div class="col-sm-8">
+      <span>OrderName</span>
+    </div>
+    <div class="col-sm-8">
+      <span>Order Id</span>
+    </div>
+    <div class="col-sm-8">
+      <span>Price</span>
+    </div>
+    <div class="col-sm-8">
+      <span>Order Quantity</span>
+    </div>
+    <div class="col-sm-8">
+      <span>Order Status</span>
+    </div>
+    <div class="col-sm-8">
+      <span>UserID</span>
+    </div>
+    <div class="col-sm-8">
+      <span>Action</span>
+    </div>
+  </div>
+
+  <div class="row orderdata">
+    <div class="col-sm-8 image">
+      <img src="assets/Images/header.png" alt="Error Image">
+    </div>
+    <div class="col-sm-8">
+      <span>OrderName</span>
+    </div>
+    <div class="col-sm-8">
+      <span>Order Id</span>
+    </div>
+    <div class="col-sm-8">
+      <span>1200</span>
+    </div>
+    <div class="col-sm-8">
+      <span>5</span>
+    </div>
+    <div class="col-sm-8">
+      <span>In Process</span>
+    </div>
+    <div class="col-sm-8">
+      <span>UserID</span>
+    </div>
+    <div class="col-sm-8">
+      <span><button class="formbutton">Cancel Order</button></span>
+    </div>
+  </div>
+
+</div> -->
+
+<div class="myorders">
+  <h1>My Orders</h1>
+  <div class="tableclass">
+    <table>
+      <thead>
+        <tr>
+          <th>Order</th>
+          <th>OrderId</th>
+          <th>Price</th>
+          <th>OrderStatus</th>
+           <th>UserId</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="tablebody" *ngFor="let order of orderData">
+        <tr>
+          <td>
+            <img class="image" src="assets/Images/shopping Cart.jpg" alt="ERROR IMG" />
+          </td>
+          <td>{{ order.id }}</td>
+          <td>{{ order.totalPrice }}</td>
+          <td>In Process</td>
+           <td>{{ order.userId }}</td>
+          <td><button class="formbutton" (click)="cancelOrder(order.id)">Cancel Order</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

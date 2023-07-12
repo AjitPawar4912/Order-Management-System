@@ -1,0 +1,30 @@
+<div class="productlist">
+  <h2 class="productlistheading">All Products are Here..!</h2>
+  <p class="productmessage"><strong>{{productMessage}}</strong></p>
+  <table class="tableclass">
+    <thead>
+      <tr>
+        <th>ProductImage</th>
+        <th>ProductName</th>
+        <th>ProductBrand</th>
+        <th>ProductCategory</th>
+        <th>ProductPrice</th>
+        <th>ProductDescription</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productList">
+        <td><img class="imageclass" src="{{item.image}}" alt="ERROR IMG"></td>
+        <td>{{item.name}}</td>
+        <td>{{item.brandname}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.price}}<P></td>
+        <td>{{item.description}}</td>
+        <td><button (click)="deleteProduct(item.productId)">Delete</button>
+          <a class="adjustupdatelink" [routerLink]="['/seller-update/',item.productId]"><button>Update</button></a></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

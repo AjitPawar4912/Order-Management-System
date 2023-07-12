@@ -1,0 +1,20 @@
+<div class="class-box">
+  <img class="Img" src="/assets/Images/banner3.png"  alt="Error"/>
+</div>
+
+<h2 style="text-align:center">Product Card</h2>
+
+<div class="card" *ngFor="let item of trendyProducts">
+  
+  <a routerLink="/details/{{item.productId}}">
+    <img class="homeimage"src="{{item.image}}" alt="ERROE IMAGE">
+    </a>
+  <h1 class="para">{{item.name}}</h1>
+  <p  class="brandname para">{{item.brandname}}</p>
+  <p  class="category para">{{item.category}}</p>
+  <p  class="price">Price:{{item.price}}</p>
+  <p class="para">{{item.description}}</p>
+  <p><button routerLink="/details/{{item.productId}}">Add to Cart</button></p>
+  <p><a routerLink="/details/{{item.productId}}"><button>View Details</button></a></p>
+</div>
+

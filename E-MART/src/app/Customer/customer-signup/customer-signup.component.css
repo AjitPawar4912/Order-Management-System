@@ -1,0 +1,53 @@
+.userauth{
+  margin-top: 70px;
+  justify-content: center;
+  margin-top: 80px;
+  margin-left: 10cm;
+  margin-right:10cm ;
+border-style: solid;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+text-align: center;
+font-family: arial;
+background-color: aquamarine;
+}
+
+.signup{
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 0px;
+  color:black;
+  border-radius: 12px;
+}
+
+ .login{
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 80px;
+  color:black;
+  border-radius: 12px;
+}
+ label{
+  text-align:start;
+}
+.forminput{
+  border-radius: 8px;
+
+}
+
+.formbutton{
+  color: black;
+  font-size: 20px ;
+  border-radius: 8px;
+}
+
+.authtogglelink{
+  margin-top: 0px;
+  color:blue;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.span{
+  margin-top: 5px;
+  font-size: 20px;
+}

@@ -1,0 +1,62 @@
+<p>seller-register works!</p>
+<div class="sellerauth">
+  <div *ngIf="!showLogin" class="signup">
+    <h2>Create your Seller Account</h2>
+    <form #sellersignup ="ngForm" (ngSubmit) = "signUp(sellersignup.value)"class="commonform">
+      <label for="sname"><b>Name</b></label>
+      <input class="forminput" type="sname" ngModel name ="sname" placeholder="Enter Your Name"  #sname="ngModel" required minlength="2">
+      <p class="invalidinput">
+        <span *ngIf="sname.invalid && sname.touched">Please Enter Valid Value</span>
+      </p>
+
+      <label for="emailadress"><b>EMail</b></label>
+      <input class="forminput" type="email" ngModel name ="emailadress" placeholder="Enter Your Email Address"  #emailadress="ngModel" required email>
+      <p class="invalidinput">
+        <span *ngIf="emailadress.invalid && emailadress.touched">Please Enter Valid Value</span>
+      </p>
+
+
+      <label for="mobilenumber"><b>Mobile Number</b></label>
+      <input class="forminput" type="mobile" ngModel name ="mobilenumber" placeholder="Enter Your Mobile Number" #mobilenumber="ngModel"required minlength="10" maxlength="10">
+      <p class="invalidinput">
+        <span *ngIf="mobilenumber.invalid && mobilenumber.touched">Please Enter Valid Value</span>
+      </p>
+
+      <label for="password"><b>password</b></label>
+      <input class="forminput" type="password" ngModel name ="password" placeholder="Set Password" #password="ngModel" required maxlength="20" minlength="2">
+      <p class="invalidinput">
+        <span *ngIf="password.invalid && password.touched">Please Enter Valid Value</span>
+      </p>
+
+      <label for="address"><b>Address</b></label>
+      <input class="forminput" type="address" ngModel name ="address" placeholder="Enter Your Address" #address="ngModel" required>
+      <p class="invalidinput">
+        <span *ngIf="address.invalid && address.touched">Please Enter Valid Value</span>
+      </p>
+
+
+      <button [disabled]="sellersignup.invalid" class="formbutton">Sign Up</button>
+      <span class="span">Already have Account?Click here to <a class="authtogglelink" (click)="openLogin()">Login</a></span>
+    </form>
+  </div>
+
+
+
+  <div *ngIf="showLogin" class="login">
+    <h2>Seller Login</h2>
+    <p class="loginerror">{{authError}}</p>
+    <form #sellerlogin ="ngForm" (ngSubmit) = "login(sellerlogin.value)"class="commonform">
+
+      <label for="emailadress"><b>Email</b></label>
+      <input class="forminput" type="email" ngModel name ="emailadress" placeholder="Enter Your Email Address"#email="ngModel" required email>
+      <p class="invalidinput"><span *ngIf="email.invalid && email.touched">Please Enter Valid Value</span></p>
+
+      <label for="password"><b>Password</b></label>
+     <input class="forminput" type="password" ngModel name ="password" placeholder="Enter Password" #password="ngModel" required minlength="2"maxlength="20">
+     <p class="invalidinput"><span *ngIf="password.invalid && password.touched">Please Enter Valid Value</span></p>
+      <button [disabled]="sellerlogin.invalid"  class="formbutton">Login</button>
+      <span class="span">Don't have Account?Click here to <a class="authtogglelink" (click)="openSignUp()">Sign-Up</a></span>
+    </form>
+  </div>
+</div>
+

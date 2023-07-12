@@ -1,0 +1,73 @@
+
+.productdetails{
+  box-shadow: 8px 5px 8px 5px rgba(23, 23, 24, 0.938);
+  text-align: center;
+  display:flex;
+  flex-direction: row;
+  margin-top: 90px;
+  padding: 50px;
+  margin-bottom: 80px;
+  justify-content:space-around;
+}
+
+.productdetailsimage{
+  height:350px;
+  width: 300px;
+}
+
+h1,p{
+
+  margin-bottom: 20px;
+}
+.para{
+  max-width: 300px;
+  }
+ .price {
+  color: grey;
+  font-size: 22px;
+}
+.brandname{
+  color: darkkhaki;
+  font-size: 22px;
+}
+
+.category{
+  color: brown;
+  font-size: 22px;
+}
+
+.quantitygroup{
+  margin-top: 20px;
+}
+
+.formbutton{
+  color: black;
+  font-size: 20px ;
+  border-radius: 8px;
+}
+
+.quantitygroup button{
+  padding:10px;
+}
+
+.quantitygroup input{
+  width:20px;
+  padding: 10px;
+}
+
+.quantitygroup .minusbutton{
+  height: 40px;
+  border:2px solid black;
+  cursor: pointer;
+}
+
+.quantitygroup .plusbutton{
+  height: 40px;
+  border:2px solid black;
+  cursor: pointer;
+
+}
+
+.input{
+  height: 15px;
+}

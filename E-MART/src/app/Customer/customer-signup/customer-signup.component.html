@@ -1,0 +1,73 @@
+<!-- USER Signup Area -->
+ <div class="userauth">
+  <div *ngIf="!showLogin" class="signup">
+    <h2>Create your User Account</h2>
+  <form #usersignup="ngForm" (ngSubmit)="signUp(usersignup.value)" class="commonform">
+    <label for="firstname"><b>First Name</b></label>
+      <input class="forminput" type="firstname" ngModel name="firstname" placeholder="Enter Your First Name"
+        #firstname="ngModel" required minlength="2"/>
+      <p class="invalidinput">
+        <span *ngIf="firstname.invalid && firstname.touched">Please Enter Valid Value</span>
+      </p>
+      <label for="lastname"><b>Last Name</b></label>
+      <input class="forminput" type="lastname" ngModel name="lastname" placeholder="Enter Your Last Name"
+        #lastname="ngModel" required minlength="2" />
+      <p class="invalidinput">
+        <span *ngIf="lastname.invalid && lastname.touched">Please Enter Valid Value</span>
+      </p>
+      <label for="emailadress"><b>Email</b></label>
+      <input class="forminput" type="email" ngModel name="emailadress" placeholder="Enter Your Email Address"
+        #emailadress="ngModel" required  />
+      <p class="invalidinput">
+        <span *ngIf="emailadress.invalid && emailadress.touched">Please Enter Valid Value</span>
+      </p>
+      <label for="password"><b>Password</b></label>
+      <input class="forminput" type="password" ngModel name="password" placeholder="Set Password" #password="ngModel"
+        required minlength="3" maxlength="20" />
+      <p class="invalidinput">
+        <span *ngIf="password.invalid && password.touched">Please Enter Valid Value</span>
+      </p>
+      <label for="mobilenumber"><b>Mobile Number</b></label>
+      <input class="forminput" type="mobile" ngModel name="mobilenumber" placeholder="Enter Your Mobile Number"
+        #mobilenumber="ngModel" required maxlength="10" minlength="10" />
+      <p class="invalidinput">
+        <span *ngIf="mobilenumber.invalid && mobilenumber.touched">Please Enter Valid Value</span>
+      </p>
+      <label for="adress"><b>Address</b></label>
+      <input class="forminput" type="adress" ngModel name="adress" placeholder="Enter Your Address" #adress="ngModel"
+        required />
+      <p class="invalidinput">
+        <span *ngIf="adress.invalid && adress.touched">Please Enter Valid Value</span>
+      </p>
+
+      <button [disabled]="usersignup.invalid" class="formbutton">Sign Up</button>
+        <span class="span">Already have Account?Click here to
+          <a class="authtogglelink" (click)="openLogin()">Login</a></span>
+   </form>
+  </div>
+ <!-- user login area -->
+
+  <div *ngIf="showLogin" class="login">
+    <h2>User Login</h2>
+    <form #Userlogin="ngForm" (ngSubmit)="login(Userlogin.value)" class="commonform">
+      <p class="loginerror">{{ authError }}</p>
+      <label for="emailadress"><b>Email</b></label>
+      <input class="forminput" type="email" ngModel name="emailadress" placeholder="Enter Your Email Address"
+        #emailadress="ngModel" required email />
+      <p class="invalidinput">
+        <span *ngIf="emailadress.invalid && emailadress.touched">Please Enter Valid Value</span>
+      </p>
+      <label for="password"><b>Password</b></label>
+      <input class="forminput" type="password" ngModel name="password" placeholder="Enter Password" #password="ngModel"
+        required minlength="2" maxlength="20" />
+      <p class="invalidinput">
+        <span *ngIf="password.invalid && password.touched">Please Enter Valid Value</span>
+      </p>
+      <button [disabled]="Userlogin.invalid" class="formbutton">Login</button>
+      <span class="span">Don't have Account?Click here to
+        <a class="authtogglelink" (click)="openSignUp()">Sign-Up</a></span>
+    </form>
+  </div>
+</div>
+
+

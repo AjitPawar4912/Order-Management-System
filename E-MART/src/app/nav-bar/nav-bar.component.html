@@ -1,0 +1,51 @@
+
+
+<div class="box">
+  <nav class="header">
+    <img routerLink="/" class="headerimage" src="assets/Images/logo.png" alt="error">
+
+  <div *ngIf="menuType==='default'" class="headersearch">
+    <input #searchInput type="text"
+    (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search for Products" />
+    <button class="hoversearch" (click)="submitSearch(searchInput.value)">Search</button>
+    <ul class="suggestedresult" *ngIf="searchResult">
+      <li *ngFor="let item of searchResult">
+        <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div [ngSwitch]="menuType">
+    <ul *ngSwitchCase="'default'">
+      <li><a routerLink ="/">Home</a></li>
+      <li><a routerLink="seller-register">Seller</a></li>
+      <li><a routerLink="customer-auth">Customer</a></li>
+      <li><a href="#">Cart({{cartItems}})</a></li>
+    </ul>
+    <ul *ngSwitchCase="'user'">
+    <div class="userheadersearch ">
+        <input #searchInput type="text"
+        (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search for Products" />
+         <button class="hoversearch" (click)="submitSearch(searchInput.value)">Search</button>
+      <ul class="suggestedresult" *ngIf="searchResult">
+        <li *ngFor="let item of searchResult">
+         <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
+        </li>
+      </ul>
+    </div>
+      <li><a routerLink ="/">Home</a></li>
+
+      <li><a [routerLink]="cartItems>0?'cart':null">Cart({{cartItems}})</a></li>
+      <li><a routerLink="my-order">MyOrder</a></li>
+      <li><a (click)="userLogout()">Logout</a></li>
+      <li><a routerLink="seller-register">{{templateName}}{{userName  | titlecase}}&#33;</a></li>
+    </ul>
+    <ul *ngSwitchCase="'seller'">
+      <li><a routerLink ="/">Home</a></li>
+      <li><a routerLink ="seller-home">ProductsList</a></li>
+      <li><a routerLink="seller-add-product">AddProduct</a></li>
+      <li><a (click)="sellerLogout()">Logout</a></li>
+      <li><a href="#">{{templateName}}{{sellerName | titlecase}}&#33;</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
